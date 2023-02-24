@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TamrinApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TamrinApplication.class, args);
-
+		//main class
 	}
 
 }
