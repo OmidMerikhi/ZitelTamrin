@@ -18,15 +18,10 @@ public class Customer {
     private String lastName;
     private LocalDateTime registerDate;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Order> orders=new ArrayList<>();
-
-
-    public Customer(String firstName, String lastName, LocalDateTime registerDate, List<Order> orders) {
+    public Customer(String firstName, String lastName, LocalDateTime registerDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.registerDate = registerDate;
-        this.orders = orders;
     }
 
     public Customer() {

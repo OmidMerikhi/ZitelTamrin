@@ -19,14 +19,12 @@ public class Product {
     private int stock;
     private Double price;
 
-    @OneToMany(mappedBy = "product")
-    private List<OrderToProduct> orderToProducts=new ArrayList<>();
 
-    public Product(String name, int stock, Double price, List<OrderToProduct> orderToProducts) {
+
+    public Product(String name, int stock, Double price) {
         this.name = name;
         this.stock = stock;
         this.price = price;
-        this.orderToProducts = orderToProducts;
     }
 
     public Product() {
@@ -39,7 +37,6 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", stock=" + stock +
                 ", price=" + price +
-                ", orderToProducts=" + orderToProducts +
                 '}';
     }
 }

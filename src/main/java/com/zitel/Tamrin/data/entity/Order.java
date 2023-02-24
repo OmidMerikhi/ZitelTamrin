@@ -14,7 +14,7 @@ public class Order {
     @Id
     @GeneratedValue
     private Long id;
-    private int TrackNumber;
+    private Long TrackNumber;
     private Double totalPrice;
     private LocalDateTime orderDate;
 
@@ -22,15 +22,11 @@ public class Order {
     @PrimaryKeyJoinColumn(name = "customer_id")
     private Customer customer;
 
-    @OneToMany(mappedBy = "order")
-    List<OrderToProduct> orderToProducts=new ArrayList<>();
-
-    public Order(int trackNumber, Double totalPrice, LocalDateTime orderDate, Customer customer, List<OrderToProduct> orderToProducts) {
+    public Order(Long trackNumber, Double totalPrice, LocalDateTime orderDate, Customer customer) {
         TrackNumber = trackNumber;
         this.totalPrice = totalPrice;
         this.orderDate = orderDate;
         this.customer = customer;
-        this.orderToProducts = orderToProducts;
     }
 
     public Order() {
